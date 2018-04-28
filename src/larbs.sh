@@ -44,7 +44,7 @@ dialog --infobox "Refreshing Arch Keyring..." 4 40
 pacman --noconfirm -Sy archlinux-keyring >/dev/tty6
 
 dialog --infobox "Getting program list..." 4 40
-curl https://raw.githubusercontent.com/LukeSmithxyz/larbs/master/src/progs.csv > /tmp/progs.csv
+curl https://raw.githubusercontent.com/devkomarek/larbs/master/src/progs.csv > /tmp/progs.csv
 rm /tmp/aur_queue &>/dev/tty6
 count=$(cat /tmp/progs.csv | grep -G ",$let," | wc -l)
 n=0
@@ -58,11 +58,11 @@ do
 done
 
 dialog --infobox "Preparing the user script..." 4 40
-curl https://raw.githubusercontent.com/LukeSmithxyz/larbs/master/src/sudoers_tmp > /etc/sudoers
+curl https://raw.githubusercontent.com/devkomarek/larbs/master/src/sudoers_tmp > /etc/sudoers
 cd /tmp
 if [ $1 = "devel" ]
-then curl https://raw.githubusercontent.com/LukeSmithxyz/larbs/devel/src/larbs_user.sh > /tmp/larbs_user.sh;
-else curl https://raw.githubusercontent.com/LukeSmithxyz/larbs/master/src/larbs_user.sh > /tmp/larbs_user.sh;
+then curl https://raw.githubusercontent.com/devkomarek/larbs/devel/src/larbs_user.sh > /tmp/larbs_user.sh;
+else curl https://raw.githubusercontent.com/devkomarek/larbs/master/src/larbs_user.sh > /tmp/larbs_user.sh;
 fi
 sudo -u $name bash /tmp/larbs_user.sh
 rm -f /tmp/larbs_user.sh
