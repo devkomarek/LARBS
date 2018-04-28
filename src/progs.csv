@@ -60,7 +60,7 @@ pulseaudio-alsa,,audio system,
 python-dbus,,,
 python-gobject,,,
 qutebrowser,B,browser,
-firefox,,default browser
+firefox,,default browser,
 r,P,statistics and calculator,
 ranger,r,file manager,
 doublecmd,,file explorer,
